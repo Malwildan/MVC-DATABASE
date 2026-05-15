@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modul Pembelajaran - Sistem Informasi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero">
+      <div class="hero__topline">SIBERMU • Pengembangan dan Penyelenggaraan Pembelajaran Digital (P3D)</div>
+      <div class="hero__grid">
+        <section class="hero__content">
+          <p class="eyebrow">Modul Pembelajaran</p>
+          <h1>Sistem Informasi<br>Pemrograman Web Framework</h1>
+          <p class="hero__lead">
+            Ringkasan materi tentang Laravel, design pattern MVC, dan dasar login yang disusun menjadi halaman belajar yang mudah dibaca.
+          </p>
+          <div class="hero__meta">
+            <span>Disusun oleh: Wicaksono Yuli Sulistyo</span>
+            <span>Format: HTML, CSS, C++</span>
+          </div>
+        </section>
+
+        <aside class="hero__panel">
+          <div class="panel__label">Peta Materi</div>
+          <nav class="panel__nav" aria-label="Navigasi materi">
+            <a href="#mvc">Design Pattern MVC</a>
+            <a href="#login">Dasar Login Laravel</a>
+            <a href="#langkah">Langkah Praktis</a>
+            <a href="#penutup">Kesimpulan</a>
+          </nav>
+        </aside>
+      </div>
+    </header>
+
+    <main class="content">
+      <section class="info-strip" aria-label="Ringkasan pembelajaran">
+        <article>
+          <span>01</span>
+          <h2>Tujuan</h2>
+          <p>Memahami bagaimana Laravel memisahkan model, view, dan controller untuk membangun aplikasi yang terstruktur.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h2>Fokus</h2>
+          <p>Mempelajari alur autentikasi dasar, termasuk instalasi Breeze, konfigurasi database, dan middleware auth.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h2>Hasil</h2>
+          <p>Menyiapkan dasar proyek Laravel yang siap dikembangkan menjadi aplikasi CRUD dan sistem login sederhana.</p>
+        </article>
+      </section>
+
+      <section class="module-card" id="mvc">
+        <div class="section-heading">
+          <p class="section-heading__kicker">Modul Ajar 1</p>
+          <h2>Design Pattern MVC pada Laravel</h2>
+        </div>
+
+        <div class="module-layout">
+          <div class="module-layout__main">
+            <p>
+              Laravel menerapkan pola Model-View-Controller untuk memisahkan tanggung jawab aplikasi.
+              Model menangani data dan logika bisnis, view menyajikan tampilan, dan controller menjadi penghubung di antara keduanya.
+            </p>
+
+            <div class="subsection">
+              <h3>Apa itu MVC?</h3>
+              <ul class="clean-list">
+                <li><strong>Model:</strong> mengelola data, logika bisnis, dan interaksi dengan database.</li>
+                <li><strong>View:</strong> menyajikan informasi kepada pengguna dalam bentuk HTML atau Blade.</li>
+                <li><strong>Controller:</strong> menerima input, memproses alur aplikasi, dan mengirim data ke view.</li>
+              </ul>
+            </div>
+
+            <div class="subsection" id="langkah">
+              <h3>Langkah Implementasi</h3>
+              <div class="steps">
+                <article>
+                  <h4>1. Membuat Model</h4>
+                  <pre><code>php artisan make:model User</code></pre>
+                  <p>Model berada di <span>app/Models/User.php</span> dan biasanya berisi atribut fillable serta relasi.</p>
+                </article>
+                <article>
+                  <h4>2. Membuat Controller</h4>
+                  <pre><code>php artisan make:controller UserController</code></pre>
+                  <p>Controller mengatur metode seperti <span>index()</span>, <span>create()</span>, dan <span>store()</span>.</p>
+                </article>
+                <article>
+                  <h4>3. Membuat View</h4>
+                  <p>View berada di <span>resources/views/users</span> untuk menampilkan daftar dan form pengguna.</p>
+                </article>
+                <article>
+                  <h4>4. Menentukan Rute</h4>
+                  <pre><code>use App\\Http\\Controllers\\UserController;
+Route::resource('users', UserController::class);</code></pre>
+                  <p>Rute resource menyediakan endpoint CRUD secara lengkap.</p>
+                </article>
+              </div>
+            </div>
+          </div>
+
+          <aside class="module-layout__aside">
+            <div class="snippet-card">
+              <div class="snippet-card__title">Contoh Model</div>
+              <pre><code>class User extends Model
+{
+    use HasFactory;
+
+    protected $fillable = ['name', 'email', 'password'];
+}</code></pre>
+            </div>
+            <div class="snippet-card">
+              <div class="snippet-card__title">Contoh View</div>
+              <pre><code>@foreach ($users as $user)
+  &lt;li&gt;{{ $user-&gt;name }} ({{ $user-&gt;email }})&lt;/li&gt;
+@endforeach</code></pre>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="module-card alt" id="login">
+        <div class="section-heading">
+          <p class="section-heading__kicker">Modul Ajar 2</p>
+          <h2>Dasar Login dengan Laravel</h2>
+        </div>
+
+        <div class="module-layout login-layout">
+          <div class="module-layout__main">
+            <p>
+              Autentikasi pengguna dapat disiapkan dengan cepat menggunakan Laravel Breeze. Setelah instalasi, Anda dapat mengelola login, register, dan dashboard dengan alur yang jelas.
+            </p>
+
+            <div class="subsection">
+              <h3>Urutan Dasar</h3>
+              <ol class="clean-ordered">
+                <li>Instal Laravel melalui Composer.</li>
+                <li>Atur koneksi database pada file <span>.env</span>.</li>
+                <li>Pasang Laravel Breeze dan jalankan migrasi.</li>
+                <li>Gunakan middleware auth untuk melindungi rute.</li>
+              </ol>
+            </div>
+
+            <div class="subsection">
+              <h3>Contoh Konfigurasi</h3>
+              <pre><code>DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=nama_database
+DB_USERNAME=username_database
+DB_PASSWORD=password_database</code></pre>
+            </div>
+          </div>
+
+          <aside class="module-layout__aside">
+            <div class="snippet-card login-form-card">
+              <div class="snippet-card__title">Contoh Form Login</div>
+              <pre><code>&lt;form method="POST" action="{{ route('login') }}"&gt;
+  @csrf
+  &lt;input type="email" name="email" required autofocus&gt;
+  &lt;input type="password" name="password" required&gt;
+  &lt;button type="submit"&gt;Login&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+            </div>
+            <div class="callout">
+              <strong>Catatan:</strong>
+              Laravel akan memverifikasi kredensial melalui controller autentikasi dan mengarahkan pengguna ke dashboard jika valid.
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="closing-grid" id="penutup">
+        <article class="closing-card">
+          <p class="closing-card__kicker">Kesimpulan</p>
+          <h2>MVC dan login adalah fondasi penting dalam pengembangan aplikasi Laravel.</h2>
+          <p>
+            Dengan memahami pemisahan tanggung jawab, struktur direktori, dan autentikasi dasar, Anda memiliki dasar yang kuat untuk membangun aplikasi yang lebih besar dan lebih rapi.
+          </p>
+        </article>
+
+        <article class="closing-card accent">
+          <p class="closing-card__kicker">Langkah Lanjut</p>
+          <h2>Gunakan halaman ini sebagai referensi belajar dan hubungkan ke proyek Laravel Anda.</h2>
+          <p>
+            Anda bisa menambahkan halaman CRUD, routing tambahan, atau komponen belajar lain di folder ini tanpa mengubah struktur utama.
+          </p>
+        </article>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
