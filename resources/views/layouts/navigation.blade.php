@@ -19,7 +19,7 @@
                         {{ __('Users') }}
                     </x-nav-link>
                     <x-nav-link :href="route('database.module')" :active="request()->routeIs('database.module')">
-                        {{ __('Database Module') }}
+                        {{ __('Implementasi Database') }}
                     </x-nav-link>
                 </div>
             </div>
@@ -80,7 +80,7 @@
                 {{ __('Users') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('database.module')" :active="request()->routeIs('database.module')">
-                {{ __('Database Module') }}
+                {{ __('Implementasi Database') }}
             </x-responsive-nav-link>
         </div>
 

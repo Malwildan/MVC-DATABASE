@@ -1,6 +1,6 @@
-# Modul Ajar Laravel
+# Implementasi Modul Ajar Laravel
 
-Project ini berisi implementasi materi:
+Project ini merupakan penerapan dari modul ajar (bukan modul ajar itu sendiri), dengan implementasi materi:
 
 - MVC dasar
 - Login dengan Laravel Breeze
@@ -72,7 +72,7 @@ Catatan:
 - File SQL ini akan drop dan recreate tabel users.
 - Password user contoh adalah: password.
 
-## Ringkasan Implementasi Modul Database
+## Ringkasan Penerapan Materi Database
 
 - Migrasi users ditambah kolom active
 - Migrasi posts dengan foreign key ke users

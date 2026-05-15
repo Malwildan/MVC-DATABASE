@@ -16,7 +16,7 @@
                             Buka MVC Users
                         </a>
                         <a href="{{ route('database.module') }}" class="inline-flex items-center rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-700 hover:bg-gray-100">
-                            Buka Modul Database
+                            Buka Database
                         </a>
                     </div>
                 </div>
